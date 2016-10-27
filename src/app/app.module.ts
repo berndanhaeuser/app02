@@ -1,20 +1,64 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {StartpageComponent} from './startpage/startpage.component';
+import {CustomersComponent} from './customers/customers.component';
+import {SingleCustomerComponent} from './single-customer/single-customer.component';
+import {DefaultComponent} from './default/default.component';
+import {SummaryComponent} from './summary/summary.component';
+import {ClaimComponent} from './claim/claim.component';
+import {RouterModule} from "@angular/router";
+import {CustomersService} from "./shared/customers.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StartpageComponent,
+    CustomersComponent,
+    SingleCustomerComponent,
+    DefaultComponent,
+    SummaryComponent,
+    ClaimComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: StartpageComponent
+      }, {
+        path: 'customers',
+        component: CustomersComponent
+      },
+      {
+        path: 'customers/:customerid',
+        component: SingleCustomerComponent
+      }
+      ,
+      {
+        path: 'customers/:customerid/claim',
+        component: ClaimComponent
+      }
+      ,
+      {
+        path: 'customers/:customerid/claims/:claimid',
+        component: SummaryComponent
+      }
+      ,
+      {
+        path: '**',
+        component: DefaultComponent
+      }
+    ])
   ],
-  providers: [],
+  providers: [CustomersService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
