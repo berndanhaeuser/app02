@@ -42,7 +42,7 @@ import {CustomersService} from "./shared/customers.service";
       }
       ,
       {
-        path: 'customers/:customerid/claim',
+        path: 'newclaim/:customerid',
         component: ClaimComponent
       }
       ,

@@ -1,0 +1,23 @@
+<h2>Schadensaufnahme</h2>
+  <!------------------------------------->
+  <div class="form-group row">
+    <label for="schadenDatum" class="col-xs-2 col-form-label">Schadendatum</label>
+    <div class="col-xs-10">
+      <input class="form-control" type="date" [(ngModel)]="schaden.schadenDatum" id="schadenDatum" required minlength="3" maxlength="10" #datum="ngModel">
+    </div>
+  </div>
+{{datum.errors | json}}
+{{datum.dirty }}
+{{datum.touched }}
+
+<div class="alert alert-danger" *ngIf="datum.errors && (datum.dirty || datum.touched)">
+
+  <div [hidden]="!datum.errors.required">
+    Pflichtfeld
+  </div>
+  <div [hidden]="!datum.errors.minlength">
+    Mindestens 3 Zeichen!
+  </div>
+
+
+</div>

@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "customerid": "4711",
+      "fullname":"Horst Meyer"
+    },
+    {
+      "customerid": "4712",
+      "fullname":"Peter Müllser"
+    },
+    {
+      "customerid": "4713",
+      "fullname":"Bob Bahn"
+    },
+    {
+      "customerid": "4714",
+      "fullname":"Trut Hahn"
+    }
+  ]
+}

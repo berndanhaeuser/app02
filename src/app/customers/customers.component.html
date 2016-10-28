@@ -1,0 +1,17 @@
+<h2>Kundenliste</h2>
+<table class="table table-condensed table-striped">
+  <thead>
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Aktionen</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cust of customers">
+    <td>{{cust.customerid}}</td>
+    <td>{{cust.fullname}}</td>
+    <td><button  class="btn btn-primary btn-sm" (click)='buttonClick_NeuerSchaden(cust.customerid)' >Neuer Schaden</button></td>
+  </tr>
+  </tbody>
+</table>
