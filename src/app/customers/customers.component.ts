@@ -10,6 +10,7 @@ import {Customer} from "../shared/customer";
 export class CustomersComponent implements OnInit {
 
   customers: Customer[];
+  currentCustomer: Customer;
   constructor(private router:Router, private customersService:CustomersService) { }
 
   buttonClick_NeuerSchaden(customerID: string){
@@ -26,4 +27,13 @@ export class CustomersComponent implements OnInit {
   ngOnInit() {
     this.getAllCustomers();
   }
+
+  showDetails(cust: Customer){
+    if (this.currentCustomer && this.currentCustomer == cust){
+      this.currentCustomer = null;
+    }else{
+      this.currentCustomer = cust;
+    }
+  }
+
 }

@@ -12,6 +12,10 @@ import {SummaryComponent} from './summary/summary.component';
 import {ClaimComponent} from './claim/claim.component';
 import {RouterModule} from "@angular/router";
 import {CustomersService} from "./shared/customers.service";
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import {Customer} from "./shared/customer";
+import { TeaserDirective } from './shared/teaser.directive';
+import { DiePipePipe } from './shared/die-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import {CustomersService} from "./shared/customers.service";
     SingleCustomerComponent,
     DefaultComponent,
     SummaryComponent,
-    ClaimComponent
+    ClaimComponent,
+    CustomerDetailComponent,
+    TeaserDirective,
+    DiePipePipe
   ],
   imports: [
     BrowserModule,

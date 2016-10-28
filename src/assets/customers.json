@@ -2,19 +2,27 @@
   "data": [
     {
       "customerid": "4711",
-      "fullname":"Horst Meyer"
+      "fullname":"Horst Meyer",
+      "memberSince": 1334232112321,
+      "claimsCount": 4
     },
     {
       "customerid": "4712",
-      "fullname":"Peter Müllser"
+      "fullname":"Peter Müllser",
+      "memberSince": 1234232112321,
+      "claimsCount": 2
     },
     {
       "customerid": "4713",
-      "fullname":"Bob Bahn"
+      "fullname":"Bob Bahn",
+      "memberSince": 1134232112321,
+      "claimsCount": 4
     },
     {
       "customerid": "4714",
-      "fullname":"Trut Hahn"
+      "fullname":"Trut Hahn",
+      "memberSince": 1034232112321,
+      "claimsCount": 6
     }
   ]
 }

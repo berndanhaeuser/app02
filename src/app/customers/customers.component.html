@@ -1,5 +1,5 @@
 <h2>Kundenliste</h2>
-<table class="table table-condensed table-striped">
+<table class="table table-condensed">
   <thead>
   <tr>
     <td>ID</td>
@@ -8,10 +8,25 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cust of customers">
-    <td>{{cust.customerid}}</td>
-    <td>{{cust.fullname}}</td>
-    <td><button  class="btn btn-primary btn-sm" (click)='buttonClick_NeuerSchaden(cust.customerid)' >Neuer Schaden</button></td>
-  </tr>
+  <template ngFor let-customer [ngForOf]="customers">
+    <tr [appTeaser]="'silver'" (click)="showDetails(customer)">
+      <td>{{customer.customerid}}</td>
+      <td>{{customer.fullname}}</td>
+      <td>
+        <button class="btn btn-primary btn-sm" (click)='buttonClick_NeuerSchaden(customer.customerid)'>Neuer Schaden
+        </button>
+      </td>
+    </tr>
+
+    <app-customer-detail *ngIf="currentCustomer && currentCustomer === customer" [customer]="customer"></app-customer-detail>
+
+    <!--<tr *ngIf="currentCustomer && currentCustomer === customer">-->
+      <!--<td colspan="3">-->
+        <!--Mitglied seit: {{customer.memberSince | date:'longDate'}} <br>-->
+        <!--Anzahl Schäden: {{customer.claimsCount}}<br><br></td>-->
+    <!--</tr>-->
+
+
+  </template>
   </tbody>
 </table>
